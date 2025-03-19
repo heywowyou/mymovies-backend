@@ -8,7 +8,7 @@ var indexRouter = require("./routes/index");
 var app = express();
 
 const cors = require("cors");
-const moviesRoutes = require("./routes/movies");
+
 app.use(cors());
 
 app.use(logger("dev"));
@@ -18,6 +18,5 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
-app.use("/movies", moviesRoutes);
 
 module.exports = app;
